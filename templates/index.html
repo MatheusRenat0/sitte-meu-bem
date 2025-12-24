@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado por Tudo, Meu Amor! 💛</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --sunflower-yellow: #FDB813;
+            --sunflower-gold: #FFD700;
+            --warm-orange: #FF9933;
+            --soft-cream: #FFF8DC;
+            --teacher-blue: #4A90E2;
+            --deep-green: #2D5016;
+            --text-dark: #2C1810;
+            --bg-light: #FFFEF7;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Audio Controls */
+        .audio-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+
+        .audio-btn {
+            background: var(--sunflower-yellow);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(253, 184, 19, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .audio-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(253, 184, 19, 0.6);
+        }
+
+        /* Sunflower Animations */
+        .sunflower-float {
+            position: fixed;
+            font-size: 2.5rem;
+            opacity: 0.4;
+            animation: float-gentle 15s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes float-gentle {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, -30px) rotate(10deg); }
+            50% { transform: translate(-15px, -50px) rotate(-5deg); }
+            75% { transform: translate(25px, -20px) rotate(15deg); }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--soft-cream) 0%, #FFF4E0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '💛';
+            position: absolute;
+            font-size: 400px;
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate-slow 60s infinite linear;
+        }
+
+        @keyframes rotate-slow {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            color: var(--sunflower-yellow);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: glow-soft 3s ease-in-out infinite;
+        }
+
+        @keyframes glow-soft {
+            0%, 100% { text-shadow: 2px 2px 4px rgba(253, 184, 19, 0.3); }
+            50% { text-shadow: 0 0 20px rgba(253, 184, 19, 0.6), 2px 2px 4px rgba(253, 184, 19, 0.3); }
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--deep-green);
+            margin-bottom: 2rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            opacity: 0.9;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce-arrow 2s infinite;
+            cursor: pointer;
+            font-size: 2rem;
+            color: var(--sunflower-yellow);
+            z-index: 2;
+        }
+
+        @keyframes bounce-arrow {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* Pride Section */
+        .pride-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(to bottom, var(--soft-cream), white);
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            text-align: center;
+            color: var(--sunflower-yellow);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '💛';
+            display: block;
+            font-size: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            opacity: 0.8;
+            margin-bottom: 4rem;
+        }
+
+        .achievements-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(253, 184, 19, 0.15);
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 3px solid transparent;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .achievement-card:nth-child(1) { animation-delay: 0.1s; }
+        .achievement-card:nth-child(2) { animation-delay: 0.2s; }
+        .achievement-card:nth-child(3) { animation-delay: 0.3s; }
+        .achievement-card:nth-child(4) { animation-delay: 0.4s; }
+        .achievement-card:nth-child(5) { animation-delay: 0.5s; }
+        .achievement-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(253, 184, 19, 0.3);
+            border-color: var(--sunflower-yellow);
+        }
+
+        .achievement-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .achievement-card h3 {
+            font-size: 1.5rem;
+            color: var(--sunflower-yellow);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .achievement-card p {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 6rem 2rem;
+            background: white;
+            position: relative;
+        }
+
+        .timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .timeline-item:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .timeline-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .timeline-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            transition: all 0.4s ease;
+            border: 5px solid var(--sunflower-yellow);
+            border-radius: 20px;
+        }
+
+        .timeline-image:hover {
+            transform: scale(1.05);
+        }
+
+        .timeline-content {
+            padding: 2rem;
+        }
+
+        .timeline-year {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--sunflower-yellow);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--deep-green);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-desc {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            opacity: 0.9;
+        }
+
+        .timeline-easter {
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, var(--sunflower-yellow), var(--warm-orange));
+            color: white;
+            border-radius: 25px;
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(253, 184, 19, 0.3);
+        }
+
+        /* Gratitude Section */
+        .gratitude-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #FFF4E0 0%, var(--soft-cream) 100%);
+            text-align: center;
+            position: relative;
+        }
+
+        .gratitude-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 4rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(253, 184, 19, 0.2);
+            position: relative;
+        }
+
+        .gratitude-content::before {
+            content: '🤝';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 4rem;
+            background: white;
+            padding: 0 1rem;
+        }
+
+        .gratitude-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            line-height: 1.8;
+            color: var(--deep-green);
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .gratitude-message {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+
+        .gratitude-box {
+            background: linear-gradient(135deg, var(--soft-cream), #FFF4E0);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 15px rgba(253, 184, 19, 0.2);
+            border: 3px solid var(--sunflower-yellow);
+        }
+
+        .gratitude-box p {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            line-height: 2;
+        }
+
+        /* Final Message Section */
+        .final-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--warm-orange), var(--sunflower-yellow));
+            text-align: center;
+            color: white;
+        }
+
+        .final-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            color: var(--text-dark);
+            padding: 4rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .final-card h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            color: var(--sunflower-yellow);
+            margin-bottom: 2rem;
+        }
+
+        .final-message {
+            font-size: 1.3rem;
+            line-height: 2;
+            margin-bottom: 2rem;
+        }
+
+        .final-signature {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: var(--sunflower-yellow);
+            margin-top: 2rem;
+        }
+
+        .heart-animation {
+            font-size: 5rem;
+            margin: 2rem 0;
+            animation: heart-beat 1s infinite ease-in-out;
+        }
+
+        @keyframes heart-beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            background: var(--deep-green);
+            color: white;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .sunflower-divider {
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
+
+        /* Loading Animation */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--soft-cream);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-sunflower {
+            font-size: 6rem;
+            animation: spin-grow 2s infinite ease-in-out;
+        }
+
+        @keyframes spin-grow {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.2); }
+        }
+
+        /* Image Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(253, 184, 19, 0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .hero h2 { font-size: 1.8rem; }
+            .hero p { font-size: 1.1rem; }
+            .section-title { font-size: 2.5rem; }
+            
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .timeline-item:nth-child(even) {
+                direction: ltr;
+            }
+            
+            .timeline-image {
+                height: 250px;
+            }
+            
+            .gratitude-content,
+            .final-card {
+                padding: 2rem;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading">
+        <div class="loading-sunflower">💛</div>
+        <p style="margin-top: 1rem; font-size: 1.2rem; color: var(--sunflower-yellow);">Preparando uma mensagem especial...</p>
+    </div>
+
+    <div class="audio-controls">
+        <button class="audio-btn" id="audioToggle" title="Música de Fundo">🎵</button>
+    </div>
+    
+    <audio id="bgMusic" loop>
+        <source src="/static/music/song.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="sunflower-float" style="top: 10%; left: 5%; animation-delay: 0s;">💛</div>
+    <div class="sunflower-float" style="top: 20%; right: 10%; animation-delay: 2s;">💛</div>
+    <div class="sunflower-float" style="bottom: 30%; left: 15%; animation-delay: 4s;">💛</div>
+    <div class="sunflower-float" style="top: 60%; right: 5%; animation-delay: 6s;">💛</div>
+    <div class="sunflower-float" style="bottom: 10%; right: 20%; animation-delay: 8s;">💛</div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Obrigado por Tudo!</h1>
+            <h2>Minha Companheira de Todas as Horas</h2>
+            <p>
+                Este ano foi especial porque você esteve ao meu lado. 
+                Seu companheirismo, amor e dedicação fizeram cada dia valer a pena. 
+                Quero agradecer por tudo que você é e tudo que faz por nós. 💛
+            </p>
+        </div>
+        <div class="scroll-indicator" onclick="scrollToNext()">👇</div>
+    </section>
+
+    <section class="pride-section" id="pride">
+        <h2 class="section-title">Por Que Sou Grato por Você</h2>
+        <p class="section-subtitle">Você é minha parceira, minha força e meu amor</p>
+        <div class="achievements-grid" id="achievements"></div>
+    </section>
+
+    <section class="gratitude-section">
+        <div class="gratitude-content">
+            <p class="gratitude-quote">
+                "O companheirismo verdadeiro é estar presente não apenas nos momentos felizes, mas em todos os momentos"
+            </p>
+            <p class="gratitude-message">
+                Você esteve comigo em cada alegria e em cada desafio deste ano. 
+                Quando eu sorri, você sorriu comigo. Quando eu precisei de força, 
+                você foi meu alicerce. Não existem palavras suficientes para agradecer 
+                por ter alguém como você ao meu lado.
+            </p>
+            <div class="gratitude-box">
+                <p>
+                    🤝 Obrigado por estar sempre presente<br>
+                    💪 Obrigado por me fortalecer quando precisei<br>
+                    😊 Obrigado por cada risada compartilhada<br>
+                    💛 Obrigado por me amar incondicionalmente<br>
+                    ⭐ Obrigado por ser você
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <h2 class="section-title">Nossa Jornada Este Ano</h2>
+        <p class="section-subtitle">Momentos que guardarei para sempre no coração</p>
+        <div class="timeline" id="timeline"></div>
+    </section>
+
+    <!-- Final Message -->
+    <section class="final-section">
+        <div class="final-card">
+            <h2>Para Você, Meu Amor</h2>
+            <div class="heart-animation">💛</div>
+            <p class="final-message">
+                Olhando para trás, vejo o quanto crescemos juntos. 
+                Cada obstáculo que superamos, cada conquista que celebramos, 
+                cada momento simples do dia a dia... tudo foi melhor porque 
+                você estava comigo.
+            </p>
+            <p class="final-message">
+                Você não é só minha namorada, você é minha melhor amiga, 
+                minha companheira de aventuras, minha confidente e minha paz. 
+                Obrigado por escolher estar comigo todos os dias.
+            </p>
+            <p class="final-message" style="font-weight: 600; font-size: 1.4rem;">
+                Que venham muitos e muitos anos juntos! 
+                Eu te amo até o infinito! 💛
+            </p>
+            <p class="final-signature">Com todo meu amor</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="sunflower-divider">💛 💛 💛</div>
+        <p style="font-size: 1.1rem;">Obrigado por Todo Companheirismo!</p>
+        <p>Criado com todo carinho e gratidão 💛</p>
+        <div class="sunflower-divider">💛 💛 💛</div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div class="modal" id="imageModal" onclick="closeImageModal()">
+        <span class="modal-close">&times;</span>
+        <img id="modalImage" src="" alt="Foto ampliada">
+    </div>
+
+    <script>
+        // Audio Control
+        const audio = document.getElementById('bgMusic');
+        const audioBtn = document.getElementById('audioToggle');
+        let isPlaying = false;
+
+        audioBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                audioBtn.textContent = '🎵';
+            } else {
+                audio.play().catch(e => console.log('Autoplay bloqueado pelo navegador'));
+                audioBtn.textContent = '🔇';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Load Achievements
+        fetch('/api/achievements')
+            .then(r => r.json())
+            .then(data => {
+                const grid = document.getElementById('achievements');
+                data.forEach((item, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'achievement-card';
+                    card.innerHTML = `
+                        <span class="achievement-icon">${item.icon}</span>
+                        <h3>${item.title}</h3>
+                        <p>${item.description}</p>
+                    `;
+                    grid.appendChild(card);
+                });
+            });
+
+        fetch('/api/timeline')
+            .then(r => r.json())
+            .then(data => {
+                const timeline = document.getElementById('timeline');
+                data.forEach((item, index) => {
+                    const div = document.createElement('div');
+                    div.className = 'timeline-item';
+                    div.innerHTML = `
+                        <div class="timeline-image-wrapper">
+                            <img src="/static/images/${item.image}" 
+                                 alt="${item.title}" 
+                                 class="timeline-image" 
+                                 onclick="openImageModal('/static/images/${item.image}')"
+                                 onerror="this.src='https://via.placeholder.com/500x350/FDB813/ffffff?text=Foto+${index + 1}'">
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">${item.year}</div>
+                            <h3 class="timeline-title">${item.title}</h3>
+                            <p class="timeline-desc">${item.description}</p>
+                            <div class="timeline-easter">${item.easter_egg}</div>
+                        </div>
+                    `;
+                    timeline.appendChild(div);
+                });
+                observeTimeline();
+            });
+
+        function observeTimeline() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                observer.observe(item);
+            });
+        }
+
+        function openImageModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.classList.add('active');
+            modalImg.src = src;
+        }
+
+        function closeImageModal() {
+            document.getElementById('imageModal').classList.remove('active');
+        }
+
+        function scrollToNext() {
+            document.getElementById('pride').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+            }, 1500);
+        });
+
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (Math.abs(currentScroll - lastScroll) > 150) {
+                createPetal();
+                lastScroll = currentScroll;
+            }
+        });
+
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.textContent = '💛';
+            petal.style.position = 'fixed';
+            petal.style.left = Math.random() * window.innerWidth + 'px';
+            petal.style.top = '-50px';
+            petal.style.fontSize = '2rem';
+            petal.style.opacity = '0.6';
+            petal.style.pointerEvents = 'none';
+            petal.style.zIndex = '9999';
+            petal.style.animation = 'fall-petal 3s linear forwards';
+            document.body.appendChild(petal);
+            
+            setTimeout(() => petal.remove(), 3000);
+        }
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall-petal {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeImageModal();
+            }
+            if (e.key === ' ' && document.getElementById('imageModal').classList.contains('active')) {
+                e.preventDefault();
+                closeImageModal();
+            }
+        });
+
+        let firstInteraction = true;
+        document.addEventListener('click', () => {
+            if (firstInteraction) {
+                firstInteraction = false;
+            }
+        }, { once: true });
+    </script>
+</body>
+</html>
