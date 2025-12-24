@@ -125,30 +125,4 @@ def get_achievements():
 def send_static(path):
     return send_from_directory('static', path)
 
-if __name__ == '__main__':
-    # Criar pastas necessárias se não existirem
-    os.makedirs('static/images', exist_ok=True)
-    os.makedirs('static/music', exist_ok=True)
-    os.makedirs('templates', exist_ok=True)
-    
-    print("=" * 50)
-    print("💝 SITE DE AGRADECIMENTO - PRONTO PARA USAR! 💝")
-    print("=" * 50)
-    print("\n📁 ESTRUTURA DE PASTAS:")
-    print("   ├── app.py (este arquivo)")
-    print("   ├── templates/")
-    print("   │   └── index.html")
-    print("   └── static/")
-    print("       ├── images/")
-    print("       │   ├── foto1.jpg até foto10.jpg")
-    print("       └── music/")
-    print("           └── song.mp3")
-    print("\n📸 ADICIONE SUAS 10 FOTOS em: static/images/")
-    print("   Nomeie como: foto1.jpg, foto2.jpg ... foto10.jpg")
-    print("   Sugestão: use fotos dos meses correspondentes!")
-    print("\n🎵 ADICIONE SUA MÚSICA em: static/music/song.mp3")
-    print("\n🚀 Servidor rodando em: http://localhost:5000")
-    print("=" * 50)
-    print()
-    
-    app.run(debug=True)
+app = app
